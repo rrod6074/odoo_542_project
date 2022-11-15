@@ -1,0 +1,11 @@
+11/15/22
+Gavin
+* add more setup scripts
+* create accounts for login
+* configure email server
+* http://164.90.247.18:8069/
+* csuf.odoo.2022@gmail.com // CsufOdoo2022!
+* todo: 
+    * add support for ssl/tls to connect to gmail
+    * add hospital and other modules
+    
