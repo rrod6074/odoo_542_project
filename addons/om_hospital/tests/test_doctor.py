@@ -20,10 +20,10 @@ class TestDoctor(TransactionCase):
 
         self.assertNotEqual(doctor.doctor_name, doctor_copy.doctor_name)
         self.assertNotEqual(doctor.age, doctor_copy.age)
-        self.assertNotEqual(doctor.gender, doctor_copy.gender)
+        self.assertEqual(doctor.gender, doctor_copy.gender)
         self.assertNotEqual(doctor.note, doctor_copy.note)
-        self.assertNotEqual(doctor.image, doctor_copy.image)
-        self.assertNotEqual(doctor.appointment_count, doctor_copy.appointment_count)
+        self.assertEqual(doctor.image, doctor_copy.image)
+        self.assertEqual(doctor.appointment_count, doctor_copy.appointment_count)
 
     def test_copy_with_default(self):
         default_fields = {
