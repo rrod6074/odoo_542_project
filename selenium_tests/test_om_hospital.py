@@ -15,7 +15,7 @@ class OmHospitalBaseTestCase(SeleniumBaseTestCase):
         super().tearDown()
 
 
-class OdooOmHospitalPatientInteraction(OmHospitalBaseTestCase):
+class OmHospitalPatientInteraction(OmHospitalBaseTestCase):
     def setUp(self):
         super().setUp()
         self.odoo_selenium_util.navigate_to_om_hospital_patients_homepage("patients")
@@ -45,6 +45,7 @@ class OdooOmHospitalPatientInteraction(OmHospitalBaseTestCase):
             "gender": "female",
             "description": "words go here",
         }
+        self.odoo_selenium_util.navigate_to_om_hospital_patients_homepage()
         self.odoo_selenium_util.navigate_to_om_hospital_create_patient()
         self.odoo_selenium_util.submit_patient_info(test_patient_data)
         self.odoo_selenium_util.navigate_to_om_hospital_patients_homepage("patients")
@@ -65,9 +66,10 @@ class OdooOmHospitalPatientInteraction(OmHospitalBaseTestCase):
             "gender": "female",
             "description": str(int(time.time())),
         }
+        self.odoo_selenium_util.navigate_to_om_hospital_patients_homepage()
         self.odoo_selenium_util.navigate_to_om_hospital_create_patient()
         self.odoo_selenium_util.submit_patient_info(test_patient_data)
-        self.odoo_selenium_util.navigate_to_om_hospital_patients_homepage("patients")
+        self.odoo_selenium_util.navigate_to_om_hospital_patients_homepage()
         self.odoo_selenium_util.navigate_to_om_hospital_create_patient()
         result = self.odoo_selenium_util.submit_patient_info(test_patient_data)
         self.assertFalse(result)

@@ -3,7 +3,7 @@ import time
 from selenium_utils import SeleniumBaseTestCase
 
 
-class OdooLogin(SeleniumBaseTestCase):
+class OdooLoginInteraction(SeleniumBaseTestCase):
     def test_successful_login(self):
         """
         positive test case:
@@ -21,6 +21,7 @@ class OdooLogin(SeleniumBaseTestCase):
         checks for user login form after logging out
         """
         self.odoo_selenium_util.login("admin", "admin")
+        self.odoo_selenium_util.show_logout_button()
         self.odoo_selenium_util.logout()
         result = self.odoo_selenium_util.is_login_form_available()
         time.sleep(1)
